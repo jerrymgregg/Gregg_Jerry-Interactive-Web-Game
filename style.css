@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #777;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.game {
+    background: #333;
+    width: 85%;
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeIn 1.3s ease-out;
+}
+
+h1, #question-number, #score, #final-score {
+    color: gold;
+}
+
+h2 {
+    margin: 25px 0;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background: gold;
+    color: black;
+}
+
+button.correct {
+    background: green;
+}
+
+button.wrong {
+    background: #b82e2e;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+#start-button, #next-button, #restart-button {
+    background: gold;
+    color: black;
+    margin-top: 15px;
+}
+
+#start-button:hover, #next-button:hover, #restart-button:hover {
+    background: white;
+}
+
+.progress-track {
+    background: #555;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    background: gold;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s;
+}
+
+#game-screen, #end-screen {
+    animation: fadeIn 1s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .game {
+        width: auto;
+        margin: 30px auto;
+        padding: 20px;
+    }
+}
